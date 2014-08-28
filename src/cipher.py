@@ -1,5 +1,5 @@
 #Encryption
-#C - ciphertext; m - padded message; 
+#C - ciphertext; m - message; 
 
 #We know c = m^e (mod n)
 def encrypt (m, e, n):
