@@ -7,7 +7,7 @@ import math
 
 bits = 0
 
-while bits < 32 or bits > 1024 or (math.log (bits, 2) + 1) % 1 != 0:
+while bits < 32 or bits > 2048 or (math.log (bits, 2) + 1) % 1 != 0:
 
   bits = inp()
 
@@ -29,23 +29,19 @@ if gcd (e,O) != 1: #must be coprime
 
 m = 96
 
-O = 120
-n = 143
-e = 7
+# test values for debug
+# O = 120
+# n = 143
+# e = 7
 
-d = EEA (O, e, 1, 0, 0, 1)
+d = EEA (O , e, 1, 0, 0, 1)
 
-if d < 0: #horrible code -- fix it
-	#d += int(((2*O + d)/O))*O
-	d += O
-	#print (d)
-
-#11,13 -- O:120, e:7
-print (O, e, d)
+if d < 0: #prevent d with negative value
+	d += (1 + abs(d)//O)*O
 
 c = cipher.encrypt (m, e, n)
 
-print (c, d, n)
+# print (c, d, n)
 
 M = cipher.decrypt (c, d, n)
 

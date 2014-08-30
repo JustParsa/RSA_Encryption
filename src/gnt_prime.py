@@ -52,8 +52,6 @@ def is_probable_prime(n, k = 7):
 
       return True  # probably prime if reached end of outer loop
 
-     
-
 def generateLargePrime(k):
 
      #k is the desired bit length
@@ -87,7 +85,7 @@ def inp():
 
     try:
 
-        bits = int(input ("Please enter the bits of encryption you would like in [32, 1024] as a power of 2: "))
+        bits = int(input ("Please enter the bits of encryption you would like in [32, 2048] as a power of 2: "))
 
         if bits < 32:
 
