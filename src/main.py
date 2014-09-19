@@ -36,12 +36,13 @@ m = 96
 
 d = EEA (O , e, 1, 0, 0, 1)
 
-if d < 0: #prevent d with negative value
+#prevent d with negative value
+if d < 0: 
 	d += (1 + abs(d)//O)*O
 
 c = cipher.encrypt (m, e, n)
 
-# print (c, d, n)
+# print (c, d, n) --debug
 
 M = cipher.decrypt (c, d, n)
 
