@@ -72,7 +72,7 @@ def generateLargePrime(k):
 
          r -= 1
 
-         #print ("{0}, {1}, {2}, {3}, {4}".format(k, 2**(k-1), 2**l, n) - debug - problems at the borderline of 32 bit in pre-version 3 python due to long/int distinction resulting in integer overflow
+         #print ("{0}, {1}, {2}, {3}, {4}").format(k, 2**(k-1), 2**l, n) - debug - problems at the borderline of 32 bit in pre-version 3 python due to long/int distinction resulting in integer overflow
 
          if is_probable_prime(n) == True:
 
