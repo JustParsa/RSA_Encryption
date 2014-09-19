@@ -2,8 +2,7 @@
 #Recursive -- wrote myself
 def EEA (a, b, x1, x2, y1, y2):
     quot, rem = a//b, a%b
-    x = x1 - quot*x2
-    y = y1 - quot*y2
+    x, y = x1 - quot*x2, y1 - quot*y2
     #print (quot, rem, x, y) #-- debug
     if rem == 0:
     	return y2
