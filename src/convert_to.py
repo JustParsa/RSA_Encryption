@@ -1,39 +1,15 @@
 #Returns decimal representation of a message to feed into RSA
-def convert_to_decimal (message):
+def convert_to_hex (message):
+  hex_arr = []
+  for letter in message:
+    hex_arr.append(str(format(ord(letter),'x').zfill(2)))
+  return ''.join(hex_arr)
 
-	chr_input = []
-
-	for letter in message:
-		chr_input.append (str(ord(letter)).zfill(3))	#Pad to 3 decimals to ensure consistent length
-
-	M = ''.join (chr_input)
-
-	return M
-
-#Takes in a numeric message from RSA and decodes into readable ASCII
-def convert_to_ASCII (M):
-
-	a = 0
-	M = str(M)
-	num_arr = []
-	char_arr = []
-
-	for num in M:
-		num_arr.append(num)
-
-	while a != len (num_arr):
-
-		char = ''
-
-		for x in range (3):
-			char += str(num_arr[x + a])
-
-		char = chr(int(char))
-
-		char_arr.append(char)
-
-		a += 3		#Iterate to next sequence of numbers to convert to char
-
-	message = ''.join (char_arr)
-
-	return message
+def convert_to_ascii(hex_input):
+  chr_arr = []
+  #iterate over the string and group two characters at a time (since all ascii chars will be two hex chars)
+  num_digits = 2
+  for i in range(0, len(hex_input), num_digits):
+    hex_number = hex_input[i:i+num_digits]
+    chr_arr.append(chr(int(hex_number, 16)))
+  return ''.join(chr_arr)

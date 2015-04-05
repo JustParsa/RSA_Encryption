@@ -2,8 +2,11 @@ from fractions import gcd
 from gnt_prime import generateLargePrime
 from gnt_prime import inp
 from EEA import EEA
+from convert_to import convert_to_ASCII
+from convert_to import convert_to_decimal
 import cipher
 import math
+import pdb
 
 bits = 0
 
@@ -27,8 +30,9 @@ if gcd (e,O) != 1: #must be coprime
 
 #Implement Extended Euclidean Algorithm 
 
-m = 96
-
+#message
+m = 90
+#m = convert_to_decimal(input("Please enter your message to be encrypted :"))
 # test values for debug
 # O = 120
 # n = 143
@@ -42,10 +46,16 @@ if d < 0:
 
 c = cipher.encrypt (m, e, n)
 
+f1 = open("cipher.txt", 'w')
+f1.write(str(c))
+f1.close()
+
 # print (c, d, n) --debug
 
 M = cipher.decrypt (c, d, n)
-
-print (M)
-
-
+print(M)
+#print(c)
+#print (convert_to_ASCII(M))
+#print('n:', n)
+#print('d:', d)
+#print('O:', O)
