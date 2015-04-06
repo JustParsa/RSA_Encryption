@@ -5,7 +5,7 @@
 
 #We know c = m^e (mod n)
 def encrypt (m, e, n):
-	c = pow (m ,e ,n)
+	c = pow (int(m,16) ,e ,n)
 	return c
 
 #We know m = c^d (mod n)

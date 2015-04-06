@@ -6,6 +6,7 @@ def convert_to_hex (message):
   return ''.join(hex_arr)
 
 def convert_to_ascii(hex_input):
+  hex_input = str(hex_input)
   chr_arr = []
   #iterate over the string and group two characters at a time (since all ascii chars will be two hex chars)
   num_digits = 2
