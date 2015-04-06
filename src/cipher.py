@@ -5,11 +5,11 @@
 
 #We know c = m^e (mod n)
 def encrypt (m, e, n):
-	c = pow (m ,e ,n)
-	return c
+  c = pow (m ,e ,n)
+  return c
 
 #We know m = c^d (mod n)
 def decrypt (c, d, n):
-	m = pow(c, d, n)
-	return m
+  m = pow(c, d, n)
+  return m
 	
